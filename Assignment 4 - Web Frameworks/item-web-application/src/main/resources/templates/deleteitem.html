@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/general.html :: headerfiles (title='Delete Item')">
+<body>
+<div class="container">
+    <div class="page-header" id="banner">
+        <div th:replace="fragments/general.html :: header"></div>
+        <div th:replace="fragments/general.html :: menu"></div>
+    </div>
+
+    <table cellpadding="10">
+        <tr>
+            <td width="100px"><b>Id:</b></td>
+            <td><b margin-left="15px" th:text="${item.id}" /></td>
+        <tr>
+        <tr>
+            <td><b th:text="#{label.name}" />:</td>
+            <td><b th:text="${item.name}" /></td>
+        <tr>
+        <tr>
+            <td><b th:text="#{label.price}" />:</td>
+            <td><b th:text="${item.price}" /></td>
+        <tr>
+        <tr>
+            <td><b th:text="#{label.description}" />:</td>
+            <td><b th:text="${item.description}" /></td>
+        <tr>
+    </table>
+
+    <p><a th:href="@{/deleteitemsave/{id}(id=${item.id})}" th:text="#{label.delete}" /> | <a th:href="@{/viewitems}" th:text="#{label.cancel}" /></p>
+
+    <div th:replace="fragments/general.html :: footer"></div>
+</div>
+
+</body>
+</html>
